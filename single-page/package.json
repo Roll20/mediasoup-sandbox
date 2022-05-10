@@ -11,6 +11,7 @@
   "author": "Kwindla Hultman Kramer",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "deep-equal": "^1.0.1",
     "express": "^4.16.4",
     "mediasoup": "^3.6.24",
