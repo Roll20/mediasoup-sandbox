@@ -4,6 +4,8 @@ const mediasoup = require('mediasoup');
 const express = require('express');
 const https = require('https');
 const fs = require('fs');
+const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const expressApp = express();
 let httpsServer;
@@ -81,6 +83,10 @@ const roomState = {
 //
 
 expressApp.use(express.static(__dirname));
+
+if (config.corsOrigin) {
+  expressApp.use(cors({ origin: config.corsOrigin }));
+}
 
 //
 // main() -- our execution entry point
@@ -190,7 +196,8 @@ async function startMediasoup() {
 // lets us use sendBeacon or fetch interchangeably to POST to
 // signaling endpoints. (sendBeacon can't set the Content-Type header)
 //
-expressApp.use(express.json({ type: '*/*' }));
+
+expressApp.use(bodyParser.json({ type: '*/*' }))
 
 // --> /signaling/sync
 //

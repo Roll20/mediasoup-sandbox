@@ -82,4 +82,6 @@ module.exports = {
       initialAvailableOutgoingBitrate: 800000,
     },
   },
+
+  corsOrigin: "https://roll20.local:6006",
 };
