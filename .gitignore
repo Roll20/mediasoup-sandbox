@@ -7,3 +7,4 @@ package-lock.json
 *.pem
 *.crt
 *.key
+gitleaks_report.json
